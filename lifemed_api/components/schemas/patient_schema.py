@@ -1,11 +1,20 @@
 from pydantic import BaseModel
 from datetime import date
-from typing import Optional
 
 
-class PatientData(BaseModel):
+class PatientResponse(BaseModel):
     uuid: str
-    name: Optional[str]
-    birth_date: Optional[date]
-    phones: Optional[str]
+    name: str
+    birth_date: date
+    phones: str
+    plan_linked: bool
+
+    class Config:
+        orm_mode = True
+
+
+class PatientRequest(BaseModel):
+    name: str
+    birth_date: date
+    phones: str
     plan_linked: bool

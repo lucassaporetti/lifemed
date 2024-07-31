@@ -1,13 +1,24 @@
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional
 
 
-class AppointmentData(BaseModel):
+class AppointmentResponse(BaseModel):
     uuid: str
-    patient_id: Optional[str]
-    doctor_id: Optional[str]
-    datetime: Optional[datetime]
+    patient_id: str
+    doctor_id: str
+    datetime: datetime
     private: bool
-    procedure_id: Optional[str]
-    plan_contract_id: Optional[str]
+    procedure_id: str
+    plan_contract_id: str
+
+    class Config:
+        orm_mode = True
+
+
+class AppointmentRequest(BaseModel):
+    patient_id: str
+    doctor_id: str
+    datetime: datetime
+    private: bool
+    procedure_id: str
+    plan_contract_id: str

@@ -6,7 +6,6 @@ from fastapi import FastAPI
 
 from lifemed_api.components.api.exception_handlers import include_exception_handlers
 from lifemed_api.components.api.middleware import include_middleware
-from lifemed_api.components.api.validation_middleware import ValidateParamsMiddleware
 from lifemed_api.components.routes.routes import include_routers
 from lifemed_api.components.config import LOGGING_CONFIG, envs
 
@@ -36,8 +35,6 @@ def api_factory():
         docs_url="/swagger",
         redoc_url="/docs",
     )
-
-    app.add_middleware(ValidateParamsMiddleware)
 
     include_middleware(app, logger)
     include_exception_handlers(app, logger)

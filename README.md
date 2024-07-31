@@ -81,6 +81,15 @@ Once the application is running, you can access the API documentation at:
 
 These URLs provide interactive documentation for testing and exploring the API.
 
+### 7. Generate JWT token for authentication
+
+To facilitate testing, you can generate a JWT token directly via the API. This token will be valid for 1 hour. 
+Send a GET request to the `/generate_token` route:
+
+```bash
+curl -X GET "http://localhost:8000/generate_token
+```
+
 ### OBS.: This application already has a Postman Collection included on main folder
 
 ## Troubleshooting:

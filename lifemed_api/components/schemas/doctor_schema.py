@@ -1,9 +1,17 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
-class DoctorData(BaseModel):
+class DoctorResponse(BaseModel):
     uuid: str
-    name: Optional[str]
-    crm: Optional[str]
-    specialty_id: Optional[str]
+    name: str
+    crm: str
+    specialty_id: str
+
+    class Config:
+        orm_mode = True
+
+
+class DoctorRequest(BaseModel):
+    name: str
+    crm: str
+    specialty_id: str

@@ -1,8 +1,15 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
-class PlanData(BaseModel):
+class PlanResponse(BaseModel):
     uuid: str
-    description: Optional[str]
-    phones: Optional[str]
+    description: str
+    phones: str
+
+    class Config:
+        orm_mode = True
+
+
+class PlanRequest(BaseModel):
+    description: str
+    phones: str

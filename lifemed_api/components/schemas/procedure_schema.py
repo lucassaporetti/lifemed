@@ -1,8 +1,16 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
-class ProcedureData(BaseModel):
+class ProcedureResponse(BaseModel):
     uuid: str
-    name: Optional[str]
-    value: Optional[float]
+    name: str
+    value: float
+
+    class Config:
+        orm_mode = True
+
+
+class ProcedureRequest(BaseModel):
+    uuid: str
+    name: str
+    value: float

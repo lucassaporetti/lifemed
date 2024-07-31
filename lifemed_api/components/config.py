@@ -43,8 +43,9 @@ class Envs(BaseSettings):
     DB_SERVICE: str = "postgresql"
     SQLALCHEMY_ECHO: bool = False
 
-    # SECRET KEY TO VERIFY TOKEN
+    # SECRET KEY AND ALGORITHM TO GENERATE TEST TOKEN
     SECRET_KEY: str = "8fYhfuMUT3ZM28iG2lRiAWqo7vL8g1_fGSyVp3rHChw"
+    ALGORITHM: str = "HS256"
 
     class Config:
         case_sensitive = True

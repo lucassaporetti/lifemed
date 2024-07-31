@@ -1,7 +1,13 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
-class SpecialtyData(BaseModel):
+class SpecialtyResponse(BaseModel):
     uuid: str
-    name: Optional[str]
+    name: str
+
+    class Config:
+        orm_mode = True
+
+
+class SpecialtyRequest(BaseModel):
+    name: str
