@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+  db:
+    image: postgres:latest
+    container_name: lifemed_postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: lifemed_db
+      POSTGRES_USER: apiuser
+      POSTGRES_PASSWORD: password
+      POSTGRES_ROOT_PASSWORD: admin
+    networks:
+      - db-test
+networks:
+  db-test:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "111.111.10.0/24"
+volumes:
+  db_data:
