@@ -11,7 +11,7 @@ only in a Linux terminal. For Windows, I recommend using Git Bash.
 
 Before running the application, ensure you have the following installed:
 
-- **Python 3.9**: [Download Python 3.9](https://www.python.org/downloads/release/python-390/)
+- **Python 3.12.3**: [Download Python 3.12.3](https://www.python.org/downloads/release/python-3123/)
 - **Poetry**: [Installation Guide](https://python-poetry.org/docs/#installation)
 - **Docker**: [Docker Installation](https://docs.docker.com/get-docker/)
 - **Docker Compose**: [Docker Compose Installation](https://docs.docker.com/compose/install/)

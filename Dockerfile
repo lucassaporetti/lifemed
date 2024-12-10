@@ -1,4 +1,4 @@
-FROM acidrain/python-poetry:3.9
+FROM acidrain/python-poetry:3.12
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
